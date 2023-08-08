@@ -57,7 +57,7 @@ const AdminParentStudent = () => {
                         <h2 className='text-[17px] font-medium  text-[rgba(0,0,0,0.7)] my-2'>Parents and Students</h2>
                         <div className="flex flex-row justify-between my-5">
                                 <input type="text" className='bg-[rgba(67,67,67,0.09)] px-3 py-2 rounded-md border-[2px] border-[rgba(67,67,67,0.03)] w-[30vw]' placeholder='Search Class or Name or Email | Phone' />
-                                <Link href={"/admin/new-student"} className='bg-[rgba(82,56,115)] rounded-md text-white px-5 py-2'>Create Student</Link>
+                                <Link href={"/new-student"} className='bg-[rgba(82,56,115)] rounded-md text-white px-5 py-2'>Create Student</Link>
                         </div>
                         <table className="w-full rounded-lg text-[rgba(67,67,67,0.71)]">
                                 <tr className="bg-[rgba(237,238,243)] text-[rgba(48,7,98,0.8)] py-10 rounded-md">

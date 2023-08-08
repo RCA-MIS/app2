@@ -12,8 +12,8 @@ const Achievement = ({ date, title, content, image }: Props) => {
                         <div className="w-2/5 h-[90%] rounded-lg bg-slate-100">
                         </div>
                         <div className="w-3/5 flex flex-col mx-3">
-                                <h4 className="pb-4 text-[#434343ba] text-[10px]">{date}</h4>
-                                <h3 className="font-extrabold pb-4 test-[#49494af0] text-sm">{title}</h3>s
+                                <h4 className="text-[#434343ba] text-[9px]">{date}</h4>
+                                <h3 className="font-extrabold text-[#49494af0] text-sm">{title}</h3>s
                                 <h6 className="text-[#434343ba] text-xs">{content}</h6>
                         </div>
                 </div>

@@ -5,27 +5,27 @@ const Sidebar = () => {
         const sidebarLinks = [
                 {
                         title: "Dashboard",
-                        to: '/admin/',
+                        to: '/',
                         icon: '/svg/dashboard.svg'
                 }, {
                         title: "Report-cards",
-                        to: '/admin/report-cards',
+                        to: '/report-cards',
                         icon: '/svg/reportcards.svg'
                 }, {
                         title: "Innovations",
-                        to: '/admin/innovations',
+                        to: '/innovations',
                         icon: '/svg/innovations.svg'
                 }, {
                         title: "Parents  | Students",
-                        to: '/admin/parents-students',
+                        to: '/parents-students',
                         icon: '/svg/addInnovations.svg'
                 }, {
                         title: "Customizations",
-                        to: '/admin/customizations',
+                        to: '/customizations',
                         icon: '/svg/opportunities.svg'
                 }, {
                         title: "Profile",
-                        to: '/admin/profile',
+                        to: '/profile',
                         icon: '/svg/profile.svg'
                 }
         ]

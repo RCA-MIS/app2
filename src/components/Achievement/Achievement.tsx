@@ -13,9 +13,9 @@ const Achievement = ({ date, title, content, image }: Props) => {
                                 <Image src={image} alt={title} className="w-full h-full" />
                         </div>
                         <div className="w-3/5 flex flex-col mx-3">
-                                <h4 className="pb-4 text-[#434343ba]">{date}</h4>
-                                <h3 className="font-extrabold pb-4 test-[#49494af0]">{title}</h3>s
-                                <h6 className="text-[#434343ba]">{content}</h6>
+                                <h4 className="pb-4 text-[#434343ba] text-[10px]">{date}</h4>
+                                <h3 className="font-extrabold pb-4 test-[#49494af0] text-sm">{title}</h3>s
+                                <h6 className="text-[#434343ba] text-xs">{content}</h6>
                         </div>
                 </div>
         )

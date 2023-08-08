@@ -1,7 +1,7 @@
 import Achievement from '@/components/Achievement/Achievement'
 import React from 'react'
-import newOne from "../../../assets/newOne.jpg"
-import newTwo from "../../../assets/newTwo.jpg"
+import newOne from "../../assets/newOne.jpg"
+import newTwo from "../../assets/newTwo.jpg"
 
 const AdminDashboard = () => {
         return (

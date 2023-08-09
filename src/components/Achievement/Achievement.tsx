@@ -8,7 +8,7 @@ interface Props {
 }
 const Achievement = ({ date, title, content, image }: Props) => {
         return (
-                <div className="w-full h-[100px] my-4 flex justify-between items-center border border-[#ccc] py-2 px-1 rounded-lg">
+                <div className="w-full h-[100px] my-4 flex justify-between  border border-[#ccc] py-2 px-1 rounded-lg overflow-y-hidden">
                         <div className="w-2/5 h-[90%] rounded-lg bg-slate-100">
                         </div>
                         <div className="w-3/5 flex flex-col mx-3">

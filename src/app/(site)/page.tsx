@@ -22,12 +22,12 @@ const AdminDashboard = () => {
                 },
         ];
         return (
-                <div className='flex flex-row gap-5 h-full'>
-                        <div className='w-[70%] p-3'>
+                <div className='flex flex-row gap-5 h-full text-sm'>
+                        <div className='w-[70%] p-3 h-full overflow-y-auto'>
                                 <p className='text-[19px] font-semibold my-2'>Welcome Back <span className='font-extrabold'>Buringiro Saad</span></p>
                                 <p className='text-[rgba(67,67,67,0.43)] my-2'>Statistics of  Rwanda Coding Academy</p>
                                 <div className="flex flex-row gap-3 h-[30vh]">
-                                        <div className="w-[40%] h-full">
+                                        <div className="w-[40%] h-full flex flex-col gap-3">
                                                 <div className='bg-[rgba(2,97,29,0.08)] border  border-[rgba(2,7,29,0.26)] rounded-md h-[50%]'>89%</div>
                                                 <div className='h-[50%] flex flex-row gap-3 '>
                                                         <div className='bg-[rgba(8,40,210,0.09)] border  border-[rgba(8,40,210,0.47)]  text-[rgba(8,40,210,0.47)] rounded-md '>234</div>
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
                                                 </div>
                                         </div>
                                         <div className="w-[60%] h-full">
-                                                <div className='bg-[rgba(2,97,29,0.08)] border-2  border-[rgba(2,7,29,0.26)] rounded-md'></div>
+                                                <div className='bg-[rgba(2,97,29,0.08)] border-2  border-[rgba(2,7,29,0.26)] rounded-md h-full'></div>
                                         </div>
                                 </div>
                                 <div className="flex flex-row justify-between">

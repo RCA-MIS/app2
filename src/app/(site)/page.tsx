@@ -2,29 +2,8 @@ import Achievement from '@/components/Achievement/Achievement'
 import React from 'react'
 import newOne from "../../assets/newOne.jpg"
 import newTwo from "../../assets/newTwo.jpg"
-import { Line } from 'react-chartjs-2';
-import {
-        Chart as ChartJs,
-        ArcElement,
-        Tooltip,
-        LineElement,
-        CategoryScale,
-        Filler,
-        LinearScale,
-        Legend,
-        PointElement,
-} from "chart.js";
+import Graph from '@/components/graph/Graph';
 
-ChartJs.register(
-        ArcElement,
-        Tooltip,
-        LineElement,
-        PointElement,
-        LinearScale,
-        Legend,
-        Filler,
-        CategoryScale
-);
 
 const AdminDashboard = () => {
         const projects = [
@@ -44,60 +23,7 @@ const AdminDashboard = () => {
                         comments: ["Keep up the good work.", "Very creative."],
                 },
         ];
-        const data = {
-                labels: ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"],
-                datasets: [
-                        {
-                                label: "Mathematics",
-                                data: [40, 60, 20, 65, 35, 45, 95],
-                                tension: 0.4,
-                                borderColor: "#0500FF",
-                        },
-                        {
-                                label: "Mathematics",
-                                data: [80, 90, 40, 77, 45, 75, 55],
-                                tension: 0.4,
-                                borderColor: "#55BB8C",
-                        },
-                ],
-        };
-        const options = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                        legend: {
-                                display: false,
-                        },
-                },
-                layout: {
-                        padding: {
-                                left: 10,
-                                right: 10,
-                                top: 10,
-                                bottom: 10,
-                        },
-                },
-                scales: {
-                        x: {
-                                grid: {
-                                        display: false,
-                                },
-                        },
-                        y: {
-                                border: {
-                                        dash: [5],
-                                },
-                                grid: {
-                                        drawTicks: false,
-                                },
-                                ticks: {
-                                        stepSize: 10,
-                                        padding: 5,
-                                        callback: (value: any) => `${value}%`,
-                                },
-                        },
-                },
-        };
+
         return (
                 <div className='flex flex-row gap-5 h-full text-sm'>
                         <div className='w-[70%] p-3 h-full overflow-y-auto'>
@@ -136,9 +62,7 @@ const AdminDashboard = () => {
                                         <div className="w-[60%] h-full">
                                                 <div className='bg-[rgba(2,97,29,0.08)] border-2  border-[rgba(2,7,29,0.26)] rounded-md h-full'>
                                                         <p className='text-[rgba(0,0,0,0.47)]'>Performance Graph</p>
-                                                        <div className="h-[90%]">
-                                                                <Line data={data} options={options} />
-                                                        </div>
+                                                        <Graph />
                                                 </div>
                                         </div>
                                 </div>

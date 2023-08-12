@@ -13,17 +13,14 @@ const Achievement = ({ date, title, content, image }: Props) => {
         const secondsInAMonth = 30 * 24 * 60 * 60 * 1000;
         const secondsInAYear = 365 * 24 * 60 * 60 * 1000;
 
-        const [dateDifference, setDateDifference] = useState('')
-
-        if (timeDifference < secondsInADay) {
-                setDateDifference(Math.floor(timeDifference / (60 * 1000)) + ' minutes ago')
-        } else if (timeDifference < secondsInAMonth) {
-                setDateDifference(Math.floor(timeDifference / (60 * 60 * 1000)) + ' hours ago')
-        } else if (timeDifference < secondsInAYear) {
-                setDateDifference(Math.floor(timeDifference / (24 * 60 * 60 * 1000)) + ' days ago')
-        } else {
-                setDateDifference(Math.floor(timeDifference / (365 * 24 * 60 * 60 * 1000)) + ' years ago')
-        }
+        const timeAgo =
+                timeDifference < secondsInADay
+                        ? Math.floor(timeDifference / (60 * 1000)) + ' minutes ago'
+                        : timeDifference < secondsInAMonth
+                                ? Math.floor(timeDifference / (60 * 60 * 1000)) + ' hours ago'
+                                : timeDifference < secondsInAYear
+                                        ? Math.floor(timeDifference / (24 * 60 * 60 * 1000)) + ' days ago'
+                                        : Math.floor(timeDifference / (365 * 24 * 60 * 60 * 1000)) + ' years ago';
         return (
                 <div className="w-full h-[100px] my-4 flex justify-between  border border-[#ccc] py-2 px-1 rounded-lg overflow-y-hidden relative">
                         <div className="absolute bg-white flex flex-row gap-1">
@@ -53,7 +50,7 @@ const Achievement = ({ date, title, content, image }: Props) => {
                         <div className="w-3/5 flex flex-col mx-3">
                                 <div className='text-[rgba(0,0,0,0.29)] flex flex-row justify-between text-[9px] font-medium'>
                                         <p>{date.getDate().toLocaleString()}</p>
-                                        <p>{dateDifference}</p>
+                                        <p>{timeAgo}</p>
                                 </div>
                                 <p className='text-[rgba(0,0,0,0.47)] text-xs font-semibold'>{title}</p>
                                 <p className="text-[rgba(0,0,0,0.29)] font-medium text-[11px]">{content}</p>

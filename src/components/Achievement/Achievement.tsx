@@ -23,7 +23,7 @@ const Achievement = ({ date, title, content, image }: Props) => {
                                         : Math.floor(timeDifference / (365 * 24 * 60 * 60 * 1000)) + ' years ago';
         return (
                 <div className="w-full h-[100px] my-4 flex justify-between  border border-[#ccc] py-2 px-1 rounded-lg overflow-y-hidden relative">
-                        <div className="absolute bg-white flex flex-row gap-1">
+                        <div className="absolute bg-white flex flex-row gap-1 bottom-0.5 right-0.5 rounded-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                                         <g clip-path="url(#clip0_1055_840)">
                                                 <path d="M17.4552 3.125L15.3719 5.20833H5.20833V19.7917H19.7917V9.62812L21.875 7.54479V20.8333C21.875 21.1096 21.7653 21.3745 21.5699 21.5699C21.3746 21.7653 21.1096 21.875 20.8333 21.875H4.16667C3.8904 21.875 3.62545 21.7653 3.4301 21.5699C3.23475 21.3745 3.125 21.1096 3.125 20.8333V4.16667C3.125 3.8904 3.23475 3.62545 3.4301 3.4301C3.62545 3.23475 3.8904 3.125 4.16667 3.125H17.4552ZM21.3385 2.1875L22.8125 3.6625L13.2375 13.2375L11.7667 13.2406L11.7646 11.7646L21.3385 2.1875Z" fill="#3C64CA" />

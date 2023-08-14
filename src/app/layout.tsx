@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
 	title: 'Admin Portal',
 	description: 'This is the admin portal for the RCA Web',
+	icons:"/favicon.png"
 }
 
 export default function RootLayout({
@@ -20,6 +21,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<head>
+				<title>Admin Portal</title>
 				<link rel='icon' href='/favicon.png' />
 			</head>
 			<body className={inter.className}>

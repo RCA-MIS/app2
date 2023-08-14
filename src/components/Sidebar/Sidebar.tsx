@@ -38,7 +38,7 @@ const Sidebar = () => {
                                 {sidebarLinks.map((link, index) => {
                                         return (
                                                 <Link onClick={() => setActiveLink(link.title)} key={index} href={link.to}
-                                                        className={activeLink ? 'flex flex-row gap-5 items-center p-3 rounded-lg bg-[rgba(42,10,82,0.1)] text-[rgba(42,10,82,0.8)]' : 'flex flex-row gap-5 items-center p-3 rounded-lg hover:bg-[rgba(42,10,82,0.1)] hover:text-[rgba(42,10,82,0.8)]'}>
+                                                        className={activeLink === link.title ? 'flex flex-row gap-5 items-center p-3 rounded-lg bg-[rgba(42,10,82,0.1)] text-[rgba(42,10,82,0.8)]' : 'flex flex-row gap-5 items-center p-3 rounded-lg hover:bg-[rgba(42,10,82,0.1)] hover:text-[rgba(42,10,82,0.8)]'}>
                                                         <img src={link.icon} alt={link.title} />
                                                         <p className='hidden md:block'>{link.title}</p>
                                                 </Link>

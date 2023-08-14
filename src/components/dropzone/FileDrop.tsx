@@ -8,23 +8,18 @@ const FileDropZone: FC<{ fileType: string; onFilesSelected: (files: File[]) => v
         children
 }) => {
         const onDrop = (acceptedFiles: File[]) => {
-                // Perform different actions based on the fileType
-                if (fileType === 'landing') {
-                        // Handle landing page image selection
-                        console.log('Landing Page Image Selected:', acceptedFiles);
-                } else if (fileType === 'about') {
-                        // Handle about page image selection
-                        console.log('About Page Image Selected:', acceptedFiles);
-                }
-
-                // Pass the selected files to the parent component
                 onFilesSelected(acceptedFiles);
         };
 
-        const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+        const { getRootProps, getInputProps, isDragActive } = useDropzone({
+                onDrop,
+                accept: {
+                        'image/png': ['.png'],
+                }
+        });
 
         return (
-                <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : ''}`}>
+                <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : 'bg-red-500'}`}>
                         <input {...getInputProps()} />
                         {children}
                 </div>

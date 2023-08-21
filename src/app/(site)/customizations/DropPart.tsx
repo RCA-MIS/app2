@@ -4,47 +4,17 @@ import FileDropZone from '@/components/dropzone/FileDrop';
 import React from 'react'
 
 const DropPart = () => {
-        const handleFilesSelected = (files: File[]) => {
+        const handleFilesSelected = (filetype:string,files: File[]) => {
                 console.log('Files selected:', files);
         };
         return (
                 <div className="my-2 grid grid-cols-3 grid-rows-2 gap-3">
-                        <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected}>
-                                <div className='bg-[rgba(67,67,67,0.03)] h-[300px] rounded-md border-[2px] border-[rgba(67,67,67,0.09)] flex flex-col gap-5 justify-center items-center'>
-                                        <p className='text-[rgba(0,0,0,0.1)]  text-[28px] font-semibold'>Drag & Drop</p>
-                                        <p className='text-[rgba(73,73,74,0.78)] text-sm font-medium'>Main Landing Page Barner Image</p>
-                                </div>
-                        </FileDropZone>
-                        <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected}>
-                                <div className='bg-[rgba(67,67,67,0.03)] h-[300px] rounded-md border-[2px] border-[rgba(67,67,67,0.09)] flex flex-col gap-5 justify-center items-center'>
-                                        <p className='text-[rgba(0,0,0,0.1)]  text-[28px] font-semibold'>Drag & Drop</p>
-                                        <p className='text-[rgba(73,73,74,0.78)] text-sm font-medium'>Main Landing About Us Large Image</p>
-                                </div>
-                        </FileDropZone>
-                        <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected}>
-                                <div className='bg-[rgba(67,67,67,0.03)] h-[300px] rounded-md border-[2px] border-[rgba(67,67,67,0.09)] flex flex-col gap-5 justify-center items-center'>
-                                        <p className='text-[rgba(0,0,0,0.1)]  text-[28px] font-semibold'>Drag & Drop</p>
-                                        <p className='text-[rgba(73,73,74,0.78)] text-sm font-medium'>Main Landing About Us Smaller Image</p>
-                                </div>
-                        </FileDropZone>
-                        <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected}>
-                                <div className='bg-[rgba(67,67,67,0.03)] h-[300px] rounded-md border-[2px] border-[rgba(67,67,67,0.09)] flex flex-col gap-5 justify-center items-center'>
-                                        <p className='text-[rgba(0,0,0,0.1)]  text-[28px] font-semibold'>Drag & Drop</p>
-                                        <p className='text-[rgba(73,73,74,0.78)] text-sm font-medium'>Innovations Images maximum 10 shots</p>
-                                </div>
-                        </FileDropZone>
-                        <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected}>
-                                <div className='bg-[rgba(67,67,67,0.03)] h-[300px] rounded-md border-[2px] border-[rgba(67,67,67,0.09)] flex flex-col gap-5 justify-center items-center'>
-                                        <p className='text-[rgba(0,0,0,0.1)]  text-[28px] font-semibold'>Drag & Drop</p>
-                                        <p className='text-[rgba(73,73,74,0.78)] text-sm font-medium'>News Letter small Card Image</p>
-                                </div>
-                        </FileDropZone>
-                        <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected}>
-                                <div className='bg-[rgba(67,67,67,0.03)] h-[300px] rounded-md border-[2px] border-[rgba(67,67,67,0.09)] flex flex-col gap-5 justify-center items-center'>
-                                        <p className='text-[rgba(0,0,0,0.1)]  text-[28px] font-semibold'>Drag & Drop</p>
-                                        <p className='text-[rgba(73,73,74,0.78)] text-sm font-medium'>News Letter large Card Image</p>
-                                </div>
-                        </FileDropZone>
+                        <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected} title='Main Landing Page Barner Image' />
+                        <FileDropZone fileType='aboutLarge' onFilesSelected={handleFilesSelected} title='Main Landing About Us Large Image' />
+                        <FileDropZone fileType='aboutSmall' onFilesSelected={handleFilesSelected} title='Main Landing About Us Smaller Image' />
+                        <FileDropZone fileType='innovations' onFilesSelected={handleFilesSelected} title='Innovations Images maximum 10 shots' />
+                        <FileDropZone fileType='newsSmall' onFilesSelected={handleFilesSelected} title='News Letter small Card Image' />
+                        <FileDropZone fileType='newsLarge' onFilesSelected={handleFilesSelected} title='News Letter large Card Image' />
                 </div>
         )
 }

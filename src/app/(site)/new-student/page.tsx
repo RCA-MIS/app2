@@ -1,16 +1,14 @@
 import FileDropZone from '@/components/dropzone/FileDrop'
 import React from 'react'
+import ProfileInput from './ProfileInput';
 
 const NewStudent = () => {
-        const handleFilesSelected = (filetype: string, files: File[]) => {
-                console.log(filetype + ':' + files);
-        };
         return (
                 <div className='w-full h-full overflow-y-auto overflow-x-hidden p-2 text-sm'>
                         < h2 className='text-[17px] font-medium  text-[rgba(0,0,0,0.7)] my-2' >Register New Student</h2 >
                         <p className='text-[rgba(67,67,67,0.43)] my-2'>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, cons, adipisci velit, </p>
                         <div className="my-10 grid grid-cols-2 gap-5">
-                                <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected} title='Main Landing Page Barner Image' />
+                                <ProfileInput />
                                 <div className="w-[50%] md:w-full">
                                         <input type="text" placeholder='Student Name' className=' w-full  my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
                                         <input type="text" placeholder='Student Email' className=' w-full  my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />

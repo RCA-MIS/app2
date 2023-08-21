@@ -1,14 +1,14 @@
 "use client"
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from "next/navigation"
 import React, { useState } from 'react'
 
 const Sidebar = () => {
         const [activeLink, setActiveLink] = useState("Dashboard")
-        const router = useRouter();
+        const path = usePathname();
 
-        const isActiveLink = (linkPath:string)   => {
-                return router.pathname === linkPath;
+        const isActiveLink = (linkPath: string) => {
+                return path  === linkPath;
         };
         return (
                 <div className='bg-[#D9D9D975] border-2 border-[#43434305] p-1 rounded-md h-full  w-fit md:w-[25vw] lg:w-[20vw] text-[#00000075] text-sm'>
@@ -22,7 +22,7 @@ const Sidebar = () => {
                                         <p className='hidden md:block'>{"Dashboard"}</p>
                                 </Link>
                                 <Link onClick={() => setActiveLink("Report-Cards")} href={"/report-cards"}
-                                        className={isActiveLink("/report-cards")  ? 'flex flex-row gap-5 items-center p-3 rounded-lg bg-[rgba(42,10,82,0.1)] text-[rgba(42,10,82,0.8)]' : 'flex flex-row gap-5 items-center p-3 rounded-lg hover:bg-[rgba(42,10,82,0.1)] hover:text-[rgba(42,10,82,0.8)]'}>
+                                        className={isActiveLink("/report-cards") ? 'flex flex-row gap-5 items-center p-3 rounded-lg bg-[rgba(42,10,82,0.1)] text-[rgba(42,10,82,0.8)]' : 'flex flex-row gap-5 items-center p-3 rounded-lg hover:bg-[rgba(42,10,82,0.1)] hover:text-[rgba(42,10,82,0.8)]'}>
                                         <svg width="20" height="18" viewBox="0 0 20 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1.087 6H18.913C19.0514 5.99994 19.1882 6.02859 19.3149 6.08413C19.4416 6.13968 19.5555 6.22092 19.6492 6.32271C19.7429 6.4245 19.8144 6.54463 19.8593 6.67549C19.9042 6.80636 19.9215 6.94512 19.91 7.083L19.076 17.083C19.0552 17.3329 18.9413 17.5658 18.7568 17.7357C18.5723 17.9055 18.3308 17.9999 18.08 18H1.92C1.66925 17.9999 1.42769 17.9055 1.24322 17.7357C1.05874 17.5658 0.944811 17.3329 0.923999 17.083L0.0899984 7.083C0.0785149 6.94512 0.0957673 6.80636 0.140664 6.67549C0.185562 6.54463 0.257127 6.4245 0.350834 6.32271C0.44454 6.22092 0.55835 6.13968 0.685065 6.08413C0.81178 6.02859 0.948643 5.99994 1.087 6ZM2.84 16H17.16L17.826 8H2.174L2.84 16ZM11.414 2H18C18.2652 2 18.5196 2.10536 18.7071 2.29289C18.8946 2.48043 19 2.73478 19 3V4H0.999999V1C0.999999 0.734784 1.10536 0.48043 1.29289 0.292893C1.48043 0.105357 1.73478 0 2 0H9.414L11.414 2Z" fill="black" fill-opacity="0.7" />
                                         </svg>

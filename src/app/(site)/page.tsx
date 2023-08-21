@@ -29,7 +29,7 @@ const AdminDashboard = () => {
                         <div className='w-[70%] p-3 h-full overflow-y-auto'>
                                 <p className='text-[19px] font-semibold my-2'>Welcome Back <span className='font-extrabold'>Buringiro Saad</span></p>
                                 <p className='text-[rgba(67,67,67,0.43)] my-2'>Statistics of  Rwanda Coding Academy</p>
-                                <div className="flex flex-row gap-3 h-[30vh] my-2">
+                                <div className="flex flex-row gap-4 h-[30vh] my-2">
                                         <div className="w-[40%] h-full flex flex-col gap-3">
                                                 <div className='bg-[rgba(2,97,29,0.08)] border  border-[rgba(2,7,29,0.26)] rounded-md h-[50%] p-4'>
                                                         <div className="flex flex-row justify-between px-3 ">

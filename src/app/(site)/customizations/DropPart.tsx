@@ -5,7 +5,7 @@ import React from 'react'
 
 const DropPart = () => {
         const handleFilesSelected = (filetype:string,files: File[]) => {
-                console.log('Files selected:', files);
+                console.log( filetype+':' + files);
         };
         return (
                 <div className="my-2 grid grid-cols-3 grid-rows-2 gap-3">

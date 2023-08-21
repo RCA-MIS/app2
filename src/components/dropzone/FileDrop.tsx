@@ -30,7 +30,7 @@ const FileDropZone: FC<{ fileType: string; onFilesSelected: (filetype: string, f
         return (
                 <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active bg-[rgba(42,10,82,0.1)]' : ''}`}>
                         <input {...getInputProps()} />
-                        {selectedImage ? <img src={selectedImage as string} alt="Selected" className="max-h-[200px]" /> : (
+                        {selectedImage !== null ? <img src={selectedImage as string} alt="Selected" className="w-full h-full" /> : (
                                 <div>
                                         {isDragActive ? (
                                                 <div className='bg-[rgba(67,67,67,0.03)] h-[300px] rounded-md border-[2px] border-[rgba(67,67,67,0.09)] flex flex-col gap-5 justify-center items-center'>

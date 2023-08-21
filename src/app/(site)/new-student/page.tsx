@@ -28,17 +28,21 @@ const NewStudent = () => {
                         <div className="my-10">
                                 <p>Parent Details</p>
                                 <div className="grid grid-cols-2 gap-x-5">
-                                        <input type="text" placeholder="Father's Name" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
-                                        <input type="text" placeholder="Father's Email" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
-                                        <input type="text" placeholder="Father's Phone Number" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
-                                        <input type="text" placeholder="Mother's Name" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
-                                        <input type="text" placeholder="Mother's Email" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
-                                        <input type="text" placeholder="Mother's Phone Number" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                                        <div className="flex flex-col ">
+                                                <input type="text" placeholder="Father's Name" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                                                <input type="text" placeholder="Father's Email" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                                                <input type="text" placeholder="Father's Phone Number" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                                        </div>
+                                        <div className="flex flex-col ">
+                                                <input type="text" placeholder="Mother's Name" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                                                <input type="text" placeholder="Mother's Email" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                                                <input type="text" placeholder="Mother's Phone Number" className='   my-2 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                                        </div>
                                 </div>
                         </div>
                         <div className="my-10 flex flex-row gap-10">
                                 <button className='bg-[rgba(67,67,67,0.03)]  text-black rounded-md  border-[2px] border-[rgba(67,67,67,0.09)] px-5 py-2' >Cancel Creation</button>
-                                <input type="submit" value={"Create Student | Details"} className='bg-[rgba(82,56,115)] rounded-md text-white px-5 py-2' />
+                                <input type="submit" value={"Create Student | Details"} className='bg-[rgba(82,56,115)] rounded-md text-white px-5 py-2 cursor-pointer' />
                         </div>
                 </div >
         )

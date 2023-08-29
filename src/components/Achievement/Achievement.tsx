@@ -1,6 +1,6 @@
 "use client"
-import Image, { StaticImageData } from 'next/image'
-import React, { useState } from 'react'
+import { StaticImageData } from 'next/image'
+import React from 'react'
 interface Props {
         date: Date,
         title: string,
@@ -8,10 +8,6 @@ interface Props {
         image: StaticImageData
 }
 const Achievement = ({ date, title, content, image }: Props) => {
-        const timeDifference = new Date().getTime() - date.getTime();
-        const secondsInADay = 24 * 60 * 60 * 1000;
-        const secondsInAMonth = 30 * 24 * 60 * 60 * 1000;
-        const secondsInAYear = 365 * 24 * 60 * 60 * 1000;
 
         const timeAgo = ((timeDifference) => timeDifference < 24 * 60 * 60 * 1000
                 ? new Date(timeDifference).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
@@ -20,14 +16,6 @@ const Achievement = ({ date, title, content, image }: Props) => {
                         : new Date(timeDifference).toLocaleDateString('en-US', { weekday: 'long', day: 'numeric' }).replace(/\s/g, ', ')
         )(new Date().getTime() - date.getTime());
 
-        // const timeAgo =
-        //         timeDifference < secondsInADay
-        //                 ? Math.floor(timeDifference / (60 * 1000)) + ' minutes ago'
-        //                 : timeDifference < secondsInAMonth
-        //                         ? Math.floor(timeDifference / (60 * 60 * 1000)) + ' hours ago'
-        //                         : timeDifference < secondsInAYear
-        //                                 ? Math.floor(timeDifference / (24 * 60 * 60 * 1000)) + ' days ago'
-        //                                 : Math.floor(timeDifference / (365 * 24 * 60 * 60 * 1000)) + ' years ago';
         return (
                 <div className="w-full h-[100px] my-4 flex justify-between  border border-[#ccc] py-2 px-1 rounded-lg overflow-y-hidden relative">
                         <div className="absolute bg-white flex flex-row gap-1 bottom-0.5 right-0.5 rounded-md">

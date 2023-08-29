@@ -6,7 +6,7 @@ const NewStudent = () => {
         return (
                 <div className='w-full h-full overflow-y-auto overflow-x-hidden p-2 text-sm'>
                         < h2 className='text-[17px] font-medium  text-[rgba(0,0,0,0.7)] my-2' >Register New Student</h2 >
-                        <p className='text-[rgba(67,67,67,0.43)] my-2'>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, cons, adipisci velit, </p>
+                        <p className='text-[rgba(67,67,67,0.43)] my-2 capitalize'>Add a new Student to the School</p>
                         <div className="my-10 grid grid-cols-2 gap-5">
                                 <ProfileInput />
                                 <div className="w-[50%] md:w-full">

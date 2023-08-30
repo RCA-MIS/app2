@@ -7,7 +7,7 @@ const ProfileInput = () => {
                 console.log(filetype + ':' + files);
         };
         return (
-                <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected} title='Main Landing Page Barner Image' />
+                <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected} title='Cover photo of the student' />
         )
 }
 

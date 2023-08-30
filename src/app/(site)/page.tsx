@@ -3,6 +3,7 @@ import React from 'react'
 import newOne from "../../assets/newOne.jpg"
 import newTwo from "../../assets/newTwo.jpg"
 import Graph from '@/components/graph/Graph';
+import Link from 'next/link';
 
 
 const AdminDashboard = () => {
@@ -66,9 +67,9 @@ const AdminDashboard = () => {
                                                 </div>
                                         </div>
                                 </div>
-                                <div className="flex flex-row justify-between my-2">
-                                        <p className='text-[rgba(67,67,67,0.43)] my-2'>Information about Projects & Innovations</p>
-                                        <p className='text-[#3C64CA] font-semibold text-[14px]'>View more</p>
+                                <div className="flex flex-row justify-between my-2 items-center">
+                                        <p className='text-[rgba(67,67,67,0.43)]'>Information about Projects & Innovations</p>
+                                        <Link href={"/projects"} className='text-[#3C64CA] font-semibold text-[14px]'>View more</Link>
                                 </div>
                                 <table className="w-full rounded-lg text-[rgba(67,67,67,0.71)]">
                                         <tr className="bg-[rgba(237,238,243)] text-[rgba(48,7,98,0.8)] py-10 rounded-md ">

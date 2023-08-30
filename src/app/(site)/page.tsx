@@ -105,7 +105,7 @@ const AdminDashboard = () => {
                         <div className='absolute w-[23vw] top-0 right-0  h-[100%] overflow-y-auto bg-[#D9D9D975] border-2 border-[#43434305] p-1 rounded-md'>
                                 <div>
                                         <div className="flex flex-row justify-between items-center  my-1 ">
-                                                <p className='text-[rgba(67,67,67,0.47)] font-semibold '>Achievements</p>
+                                                <p className='text-[rgba(67,67,67,0.47)] font-semibold '>Announcements</p>
                                                 <div className="h-5 w-5 rounded-full bg-[#687CE2] text-white flex justify-center items-center text-xs">82</div>
                                         </div>
                                         <div className=''>

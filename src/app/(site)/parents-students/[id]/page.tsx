@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileInput from '../create/ProfileInput'
+import ProfileInput from '../ProfileInput'
 
 const page = () => {
         const student = {

@@ -3,7 +3,7 @@ import React from 'react'
 
 const page = () => {
         return (
-                <div><OneInnovation /></div>
+                <div className='w-full h-full overflow-y-auto'><OneInnovation /></div>
         )
 }
 

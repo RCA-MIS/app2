@@ -13,7 +13,7 @@ interface Props {
 const Innovation = ({ id, image, date, title, content, tags }: Props) => {
         return (
                 <Link href={`/innovations/${id}`}>
-                        <div className='border border-[#ccc] py-2 px-1 rounded-lg h-[200px] my-2 flex flex-row gap-2 relative bg-[rgba(67,67,67,0.09)] pr-10 pb-5'>
+                        <div className='border border-[#ccc] py-2 px-1 pb-10 rounded-lg h-[250px] md:h-[200px] my-2 flex flex-col sm:flex-row gap-2 relative bg-[rgba(67,67,67,0.09)] pr-10 pb-5'>
                                 <div className="absolute right-0 bottom-0 p-2">
                                         <div className='flex flex-col gap-1 border border-[#ccc] p-1 rounded-lg'>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18" fill="none" className='cursor-pointer w-4'>
@@ -27,18 +27,32 @@ const Innovation = ({ id, image, date, title, content, tags }: Props) => {
                                                 </svg>
                                         </div>
                                 </div>
-                                <div className='absolute bottom-0 right-0 w-[75%] pr-10 p-1'>
+                                <div className='absolute bottom-0 right-0 w-full sm:w-[75%] pr-10 p-1'>
                                         <div className="flex flex-row justify-between  text-gray-700">
-                                                <p>1000 Appreciations</p>
-                                                <p>100 Comments</p>
+                                                <p className='hidden sm:block'>1000 Appreciations</p>
+                                                <p className='hidden sm:block'>100 Comments</p>
                                                 <p>Published by Mugisha Yves</p>
                                         </div>
                                 </div>
-                                <div className="h-full min-w-[25%] max-w-[25%] rounded-lg bg-slate-100"></div>
-                                <div className='my-1'>
-                                        <p className='font-bold text-base'>{title}</p>
-                                        <p className='text-gray-700'>{date.toLocaleDateString()}</p>
-                                        <div className="my-1 flex gap-1 flex-wrap">
+                                <div className="hidden sm:block  h-full w-[30%] md:w-[25%]  rounded-lg bg-slate-100"></div>
+                                <div className="flex sm:hidden gap-2">
+                                        <div className="block sm:block  h-full w-[30%] md:w-[25%]  rounded-lg bg-slate-100"></div>
+                                        <div>
+                                                <p className='font-bold text-base'>{title}</p>
+                                                <p className='text-gray-700'>{date.toLocaleDateString()}</p>
+                                                <div className="my-1 flex gap-1 flex-wrap ">
+                                                        {tags.map((tag, i) => {
+                                                                return (
+                                                                        <p key={i} className='border px-2  py-1 rounded-full'>{tag}</p>
+                                                                )
+                                                        })}
+                                                </div>
+                                        </div>
+                                </div>
+                                <div className='my-2 w-[70%] md:w-[75%]'>
+                                        <p className='hidden sm:block font-bold text-base'>{title}</p>
+                                        <p className= ' hidden sm:block text-gray-700'>{date.toLocaleDateString()}</p>
+                                        <div className="hidden sm:flex  my-1 gap-1 flex-wrap ">
                                                 {tags.map((tag, i) => {
                                                         return (
                                                                 <p key={i} className='border px-2  py-1 rounded-full'>{tag}</p>

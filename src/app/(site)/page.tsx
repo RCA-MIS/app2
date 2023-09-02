@@ -27,12 +27,12 @@ const AdminDashboard = () => {
 
         return (
                 <div className='relative h-full text-sm'>
-                        <div className='pr-[24vw] w-[100%] p-3 h-full overflow-y-auto'>
+                        <div className='lg:pr-[24vw] w-[100%] p-3 h-full overflow-y-auto'>
                                 <p className='text-[19px] font-semibold my-2'>Welcome Back <span className='font-extrabold'>Buringiro Saad</span></p>
                                 <p className='text-[rgba(67,67,67,0.43)] my-2'>Statistics of  Rwanda Coding Academy</p>
-                                <div className="flex flex-row gap-4 h-[35vh] my-2">
-                                        <div className="w-[40%] h-full flex flex-col gap-3">
-                                                <div className='bg-[rgba(2,97,29,0.08)] border  border-[rgba(2,7,29,0.26)] rounded-md h-[50%] p-5 flex flex-col gap-5'>
+                                <div className="flex flex-col sm:flex-row gap-4  my-2">
+                                        <div className="w-full sm:w-[40%] h-full flex flex-row sm:flex-col gap-3">
+                                                <div className='bg-[rgba(2,97,29,0.08)] border  border-[rgba(2,7,29,0.26)] rounded-md sm:h-[50%] p-5 flex flex-col gap-5 w-[70%] sm:w-full'>
                                                         <div className="flex flex-row justify-between px-3 ">
                                                                 <p className='text-[rgba(3,146,67,0.86)] font-extrabold text-[37px]'>89 %</p>
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
@@ -49,18 +49,18 @@ const AdminDashboard = () => {
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div className='h-[50%] flex flex-row gap-3  '>
-                                                        <div className='bg-[rgba(8,40,210,0.09)] border  border-[rgba(8,40,210,0.47)]  text-[rgba(8,40,210,0.47)] rounded-md  w-[50%] p-5 flex flex-col gap-3'>
+                                                <div className='sm:h-[50%] w-[40%] sm:w-full flex flex-col  sm:flex-row gap-3  '>
+                                                        <div className='bg-[rgba(8,40,210,0.09)] border  border-[rgba(8,40,210,0.47)]  text-[rgba(8,40,210,0.47)] rounded-md  w-full  sm:w-[50%] p-5 flex flex-col gap-3'>
                                                                 <p className='font-extrabold text-[37px]'>234</p>
                                                                 <p className='font-extrabold text-xs'>Parents</p>
                                                         </div>
-                                                        <div className='bg-[rgba(82,56,115,0.17)] border  border-[rgba(82,56,115,0.55)] text-[rgba(82,56,115,0.55)] rounded-md  w-[50%] p-5 flex flex-col gap-3'>
+                                                        <div className='bg-[rgba(82,56,115,0.17)] border  border-[rgba(82,56,115,0.55)] text-[rgba(82,56,115,0.55)] rounded-md  w-full  sm:w-[50%] p-5 flex flex-col gap-3'>
                                                                 <p className='font-extrabold text-[37px]'>225</p>
                                                                 <p className='font-extrabold text-xs'>Students</p>
                                                         </div>
                                                 </div>
                                         </div>
-                                        <div className="w-[60%] h-full">
+                                        <div className="w-full sm:w-[60%] ">
                                                 <div className='bg-[rgba(2,97,29,0.08)] border-2  border-[rgba(2,7,29,0.26)] rounded-md h-full p-3'>
                                                         <p className='text-[rgba(0,0,0,0.47)]'>Performance Graph</p>
                                                         <Graph />
@@ -102,7 +102,7 @@ const AdminDashboard = () => {
                                         ))}
                                 </table>
                         </div >
-                        <div className='absolute w-[23vw] top-0 right-0  h-[100%] overflow-y-auto bg-[#D9D9D975] border-2 border-[#43434305] p-1 rounded-md'>
+                        <div className='hidden lg:block absolute w-[23vw] top-0 right-0  h-[100%] overflow-y-auto bg-[#D9D9D975] border-2 border-[#43434305] p-1 rounded-md'>
                                 <div>
                                         <div className="flex flex-row justify-between items-center  my-1 ">
                                                 <p className='text-[rgba(67,67,67,0.47)] font-semibold '>Announcements</p>

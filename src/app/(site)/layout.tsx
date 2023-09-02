@@ -22,7 +22,7 @@ export default function RootLayout({
                         <Navbar />
                         <div className="flex flex-row h-[80vh] my-1 px-3 gap-3">
                                 <Sidebar />
-                                <div className="w-[90vw] md:w-[75vw] lg:w-[80vw]">
+                                <div className="w-full md:w-[75vw] lg:w-[80vw]">
                                         {children}
                                 </div>
                         </div>

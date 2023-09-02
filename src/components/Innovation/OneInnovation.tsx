@@ -8,7 +8,7 @@ const OneInnovation = () => {
         const innovation = {
                 id: 1,
                 title: "Smart Home Automation System",
-                description: "A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app.",
+                description: "A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app. A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app.A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app.A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app.A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app.A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app.A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app.A cutting-edge smart home system that allows users to control their lights, appliances, and security systems remotely through a mobile app.",
                 date: new Date("2023-08-15"),
                 image: "smart_home.jpg",
                 tags: ["IoT", "Home Automation", "Mobile App"]

@@ -9,8 +9,6 @@ export const createNews = (data: any): Promise<any | Error> => {
                                 resolve(res.data);
                         })
                         .catch((error) => {
-                                console.log(error);
-                                console.error('Error creating Product:', error);
                                 reject(error);
                         });
         });

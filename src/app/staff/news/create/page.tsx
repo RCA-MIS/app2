@@ -26,16 +26,18 @@ const page = () => {
         const onSubmit = async (data: any) => {
                 setLoading(true)
                 try {
-                        const news = await createNews({
+                        const newNew = {
                                 title: data.headline,
                                 shortDescription: data.description,
                                 longDescription: data.content
-                        })
+                        }
+                        const news = await createNews(newNew)
+                        console.log(news)
                         setLoading(false)
                         toast.success("News created successfully")
                 } catch (error) {
                         setLoading(false)
-                        toast.error(error)
+                        toast.error(error.response.data.message)
                 }
         }
         return (

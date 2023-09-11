@@ -1,18 +1,14 @@
 import { api } from "@/config/axios";
-const setAuthorizationHeader = (cookie: string) => {
-        api.defaults.headers.common['Authorization'] = `Bearer ${cookie}`;
-};
 
-
-
-export const loginService = (data: Login): Promise<{ message: string } | Error> => {
+export const loginService = (data: Login): Promise<any | Error> => {
         return new Promise((resolve, reject) => {
                 api
-                        .post<{ message: string; user: User, token: string }>(`/api/auth/login`, data)
+                        .post(`/api/auth/login`, data)
                         .then((res) => {
-                                const { message, user, token } = res.data
-                                setAuthorizationHeader(token);
-                                resolve({ message })
+                                const { message, token } = res.data
+                                const { user } = res.data.data
+                                localStorage.setItem("tok", res.data.data.accessToken)
+                                resolve({ message, user })
                         })
                         .catch((error) => {
                                 reject(error.response.data.error);

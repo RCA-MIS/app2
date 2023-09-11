@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { useForm } from "react-hook-form"
+import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { loginService } from '@/actions/auth.action'
 import { useRouter } from 'next/navigation'
@@ -17,15 +17,19 @@ const LoginForm = () => {
         })
         const router = useRouter()
         const onSubmit = async (data: Login) => {
-                console.log(process.env.BACKEND)
                 try {
                         const loggedInUser = await loginService(data);
                         if (!(loggedInUser instanceof Error)) {
                                 toast.success(loggedInUser.message)
-                                router.push("/")
+                                if (loggedInUser.user.role === 'admin') {
+                                        router.push("/staff")
+                                } else if (loggedInUser.user.role === "standard") {
+                                        router.push("/student")
+                                }
                         }
-                } catch (error) {
-                        toast.error(error as string)
+                } catch (err) {
+                        console.log(err)
+                        toast.error(err as string)
                 }
         }
         return (
@@ -41,7 +45,7 @@ const LoginForm = () => {
                                 </div>
                                 <Link href={"/forgot-password"} className='font-medium text-[#523873] text-sm'>Forgot my password</Link>
                         </div>
-                        <input type="submit" value="Login" className='rounded-full border border-[#2955C56E] border-opacity-43 bg-[#523873] text-white px-[3.5rem]  py-3 my-2.5 text-[1rem] w-[60%]' />
+                        <input type="submit" value="Login" className='cursor-pointer rounded-full border border-[#2955C56E] border-opacity-43 bg-[#523873] text-white px-[3.5rem]  py-3 my-2.5 text-[1rem] w-[60%]' />
                 </form>
         )
 }

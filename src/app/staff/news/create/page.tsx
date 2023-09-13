@@ -24,20 +24,23 @@ const page = () => {
                 console.log(filetype + ':' + files);
         };
         const onSubmit = async (data: any) => {
+                console.log(data)
+                const newNew = {
+                        title: data.headline,
+                        shortDescription: data.description,
+                        longDescription: data.content
+                }
+                console.log(newNew)
                 setLoading(true)
                 try {
-                        const newNew = {
-                                title: data.headline,
-                                shortDescription: data.description,
-                                longDescription: data.content
-                        }
                         const news = await createNews(newNew)
                         console.log(news)
                         setLoading(false)
                         toast.success("News created successfully")
                 } catch (error) {
                         setLoading(false)
-                        toast.error(error.response.data.message)
+                        console.log(error)
+                        // toast.error(error.response.data.message)
                 }
         }
         return (

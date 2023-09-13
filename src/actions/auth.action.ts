@@ -5,12 +5,15 @@ export const loginService = (data: Login): Promise<any | Error> => {
                 api
                         .post(`/auth/login`, data)
                         .then((res) => {
-                                const { message, token } = res.data
-                                const { user } = res.data.data
-                                localStorage.setItem("tok", res.data.data.accessToken)
-                                resolve({ message, user })
+                                // const { message, token } = res.data
+                                // console.log("finished message")
+                                // // localStorage.setItem("token", res.data.data.refreshToken)
+                                // resolve({ message })
+                                resolve({message})
+                                console.log(res)
                         })
                         .catch((error) => {
+                                console.log(error)
                                 reject(error.response.data.error);
                         })
         })

@@ -8,7 +8,7 @@ export const api = axios.create({
 
 api.interceptors.request.use(
         (config) => {
-                const accessToken = JSON.parse(localStorage.getItem("tok") as string);
+                const accessToken =localStorage.getItem("token") ;
                 if (accessToken) {
                         if (config.headers) config.headers.token = accessToken;
                 }

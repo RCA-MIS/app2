@@ -23,7 +23,6 @@ const LoginForm = () => {
                 console.log(data)
                 try {
                         const loggedInUser = await loginService(data);
-<<<<<<< HEAD
                         console.log(Object.keys(loggedInUser))
                         if (!(loggedInUser instanceof Error)) {
                                 toast.success(loggedInUser.message.toString())
@@ -31,15 +30,6 @@ const LoginForm = () => {
                                         router.push("/staff")
                                 } else if (loggedInUser.data.user.roles[0].role_name === "STUDENT") {
                                         localStorage.setItem("token",JSON.stringify(loggedInUser.data));
-=======
-                        console.log(loggedInUser.data.refresh_token)
-                        if (!(loggedInUser instanceof Error)) {
-                                localStorage.setItem("token", loggedInUser.data.refresh_token)
-                                toast.success(loggedInUser.message)
-                                if (loggedInUser.data.user.roles[0].role_name == "ADMIN") {
-                                        router.push("/staff")
-                                } else if (loggedInUser.data.user.roles[0].role_name == "STUDENT") {
->>>>>>> 51515a9850d36434130580cb33ab6bf3a483bf5e
                                         router.push("/student")
                                 }
                         }

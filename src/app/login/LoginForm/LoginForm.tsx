@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast'
 import { loginService } from '@/actions/auth.action'
 import { useRouter } from 'next/navigation'
 import { ClipLoader, FadeLoader } from 'react-spinners'
+
 const LoginForm = () => {
         const [loading, setLoading] = useState(false)
         const schema = yup.object().shape({
@@ -20,21 +21,23 @@ const LoginForm = () => {
         const router = useRouter()
         const onSubmit = async (data: Login) => {
                 console.log(data)
+                setLoading(true);
                 try {
                         const loggedInUser = await loginService(data);
-                        console.log(loggedInUser.data.refresh_token)
                         if (!(loggedInUser instanceof Error)) {
-                                localStorage.setItem("token", loggedInUser.data.refresh_token)
-                                toast.success(loggedInUser.message)
-                                if (loggedInUser.data.user.roles[0].role_name == "ADMIN") {
+                                toast.success(loggedInUser.message.toString())
+                                if (loggedInUser.data.user.roles[0].role_name === 'admin') {
                                         router.push("/staff")
-                                } else if (loggedInUser.data.user.roles[0].role_name == "STUDENT") {
+                                } else if (loggedInUser.data.user.roles[0].role_name === "STUDENT") {
+                                        localStorage.setItem("token",JSON.stringify(loggedInUser.data));
                                         router.push("/student")
                                 }
                         }
+                        setLoading(false)
                 }
                  catch (err) {
-                //         console.log(err)
+                        setLoading(false)
+                        toast.error("Error while logging in")
                 }
         }
         return (

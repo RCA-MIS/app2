@@ -3,13 +3,10 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 *{
-  font-family:'Poppins','serif'
+  font-family:'Poppins',sans-serif;
 }
 
-*{
-  font-size: 12px;
-  font-family: poppins;
-}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -65,10 +62,6 @@ background-size:full;
 body{
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 

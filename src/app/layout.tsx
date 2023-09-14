@@ -23,7 +23,7 @@ export default function RootLayout({
 				<title>Admin Portal</title>
 				<link rel='icon' href='/favicon.png' />
 			</head>
-			<body className={inter.className}>
+			<body >
 				{children}
 				<Toaster />
 			</body>

@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+*{
+  font-family:'Poppins','serif'
+}
 
 *{
   font-size: 12px;
@@ -27,4 +31,47 @@
 }
 .verti-writing{
   writing-mode: horizontal-tb;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lower-navbar{
+  background: linear-gradient(180deg, #523873 0%, rgba(69, 69, 69, 0) 100%);
+}
+.backs{
+background-size:full;
+
+}
+
+body{
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.txtShadow{
+  text-shadow:1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }

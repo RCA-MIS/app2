@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast'
 import { loginService } from '@/actions/auth.action'
 import { useRouter } from 'next/navigation'
 import { ClipLoader, FadeLoader } from 'react-spinners'
+
 const LoginForm = () => {
         const [loading, setLoading] = useState(false)
         const schema = yup.object().shape({
@@ -22,12 +23,13 @@ const LoginForm = () => {
                 console.log(data)
                 try {
                         const loggedInUser = await loginService(data);
-                        console.log(loggedInUser)
+                        console.log(Object.keys(loggedInUser))
                         if (!(loggedInUser instanceof Error)) {
-                                toast.success(loggedInUser.message)
-                                if (loggedInUser.user.role === 'admin') {
+                                toast.success(loggedInUser.message.toString())
+                                if (loggedInUser.data.user.roles[0].role_name === 'admin') {
                                         router.push("/staff")
-                                } else if (loggedInUser.user.role === "standard") {
+                                } else if (loggedInUser.data.user.roles[0].role_name === "STUDENT") {
+                                        localStorage.setItem("token",JSON.stringify(loggedInUser.data));
                                         router.push("/student")
                                 }
                         }

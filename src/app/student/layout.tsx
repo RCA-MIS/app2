@@ -7,7 +7,6 @@ import AdminPortalSidebar from '@/components/Sidemenu/AdminPortalSidebar'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { useEffect } from "react"
-
 import { useRouter } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })

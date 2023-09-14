@@ -43,6 +43,7 @@ import Numgraph from "../assets/vectors/Numgraph";
 import { swipersInfo } from "../data";
 import SwiperPage from "../components/Swiper";
 import Trapezium from "../assets/vectors/Trapezium";
+import { getWebcontent } from "@/actions/webcontent.action";
 const HomePage = () => {
   const counterRef = useRef(null);
   const [isInViewPort, setIsInViewPort] = useState(false);
@@ -50,11 +51,17 @@ const HomePage = () => {
   let [projects, setProjects] = useState(0);
   let [graduates, setGraduates] = useState(0);
   let [partner, setPartner] = useState(0);
+  const [data,setData] = useState([])
   const partners: string[] = [
     "images/studentsOne.png",
     "images/studentsOne.png",
   ];
   const sliders: StaticImageData[] = [mainImg, img2];
+  //fetch webContent
+  useEffect(async()=>{
+    const webContent = await getWebcontent();
+
+  },[])
   useEffect(() => {
     if (isInViewPort) {
       setInterval(() => {
@@ -297,7 +304,7 @@ const HomePage = () => {
               in the Tech industry of Rwanda.
             </p>
             <div className="flex-col relative">
-              <div className="hidden 2xl:flex absolute w-[100%] lg:h-[100%] -translate-y-36 justify-start ml-20">
+              <div className="hidden 2xl:flex absolute w-[100%] lg:h-[100%] -translate-y-28 justify-start ml-32">
                 <Pathvec />
               </div>
               <div className=" px-4 xl:px-32  md:space-y-[40px] xl:space-y-[200px]">
@@ -329,7 +336,7 @@ const HomePage = () => {
                       <div className="font-bold text-purpleColor/10 text-6xl basis-1/2 text-end md:border-0 border-2 border-purpleColor flex items-center justify-center rounded-full md:w-0 w-16 md:h-0 h-16 mx-auto border-dashed">
                         {path.id}
                       </div>
-                      <div className="w-24 h-20 rounded-full bg-purpleColor border-2 border-white mr-[250px] hidden 2xl:block"></div>
+                      <div className="w-24 h-20 rounded-full bg-purpleColor border-2 border-white mr-[100px] hidden 2xl:block"></div>
                       <div className="basis-1/3 space-y-8">
                         <p className="text-purpleColor font-semibold text-xl">
                           {path.title}

@@ -23,7 +23,6 @@ const LoginForm = () => {
                 console.log(data)
                 try {
                         const loggedInUser = await loginService(data);
-                        console.log(Object.keys(loggedInUser))
                         if (!(loggedInUser instanceof Error)) {
                                 toast.success(loggedInUser.message.toString())
                                 if (loggedInUser.data.user.roles[0].role_name === 'admin') {

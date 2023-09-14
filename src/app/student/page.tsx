@@ -10,7 +10,8 @@ import { RootState } from '@/store';
 
 
 const AdminDashboard = () => {
-        const userObj = JSON.parse(localStorage.getItem('token'));
+        const unparsedData = localStorage.getItem("token");
+        const userObj = JSON.parse(unparsedData!);
         console.log(userObj)
         const projects = [
                 {

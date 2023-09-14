@@ -37,7 +37,7 @@ import { pathData } from "../data/adminPath";
 import Mainarticle from "../components/News/Mainarticle";
 import StatView from "../components/stats";
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import NewsComponent from "../app/news/components/NewsComponent/NewsComponent";
+import NewsComponent from "../components/News/NewsComponent";
 import { SwiperNavigation } from "../utils/swiper";
 import { useEffect, useRef, useState } from "react";
 import Pathvec from "../assets/vectors/Pathvec";

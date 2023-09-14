@@ -38,7 +38,7 @@ const AdminDashboard = () => {
         return (
                 <div className='flex flex-row gap-5  text-sm'>
                         <div className='w-full md:w-[70%] p-3 h-full overflow-y-auto'>
-                                <p className='text-[15px] font-semibold my-2 text-slate-800'>Welcome Back <span className=' font-extrabold'>{userObj.user.firstName} {userObj.user.lastName}</span></p>
+                                <p className='text-[15px] font-semibold my-2 text-slate-800'>Welcome Back <span className=' font-extrabold'>Burigo Jabes</span></p>
                                 <p className='text-[rgba(67,67,67,0.43)] my-3'>Statistics of your performance and innovations published</p>
                                 <div className="max-[450px]:flex-col flex flex-row gap-4 my-2">
                                         <div className="max-[450px]:w-full w-[40%] h-full flex flex-col gap-3">

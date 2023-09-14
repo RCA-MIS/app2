@@ -8,7 +8,7 @@ const DropPart = () => {
                 console.log( filetype+':' + files);
         };
         return (
-                <div className="my-2 grid grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-3">
+                <div className="my-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-3">
                         <FileDropZone fileType='landing' onFilesSelected={handleFilesSelected} title='Main Landing Page Barner Image' />
                         <FileDropZone fileType='aboutLarge' onFilesSelected={handleFilesSelected} title='Main Landing About Us Large Image' />
                         <FileDropZone fileType='aboutSmall' onFilesSelected={handleFilesSelected} title='Main Landing About Us Smaller Image' />

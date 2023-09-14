@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Project from '@/components/Projects/Project'
 import sampleImage from "../../../assets/assets/newOne.png"
 // import {projects} from "../../../data/projects"
-import { baseUrl } from '@/utils/url'
+import { baseUrl, token } from '@/utils/url'
 import axios from "axios"
 
 const AdminInnovation = () => {

@@ -37,7 +37,7 @@ const Page = () => {
                         console.log(news)
                         setLoading(false)
                         toast.success("News created successfully")
-                } catch (error) {
+                } catch (error: any) {
                         setLoading(false)
                         toast.error(error.response.data.message)
                 }

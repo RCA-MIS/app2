@@ -10,6 +10,7 @@ import { baseUrl } from '@/utils/url';
 import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 const AdminCustomization: React.FC = () => {
+        const navigate = useRouter()
         const [loading, setLoading] = useState(false)
         const schema = yup.object().shape({
                 aboutUsText: yup.string().notRequired(),
@@ -51,7 +52,6 @@ const AdminCustomization: React.FC = () => {
                 }
                 setLoading(true)
                 const token = localStorage.getItem("token")
-                const navigate = useRouter()
                 console.log(token)
                 axios.post(`${baseUrl}/web-content/update`, web, {
                         headers: {

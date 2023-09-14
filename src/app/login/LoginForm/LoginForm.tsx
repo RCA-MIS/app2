@@ -21,6 +21,7 @@ const LoginForm = () => {
         const router = useRouter()
         const onSubmit = async (data: Login) => {
                 console.log(data)
+                setLoading(true);
                 try {
                         const loggedInUser = await loginService(data);
                         console.log(Object.keys(loggedInUser))
@@ -33,9 +34,11 @@ const LoginForm = () => {
                                         router.push("/student")
                                 }
                         }
+                        setLoading(false)
                 }
                  catch (err) {
-                //         console.log(err)
+                        setLoading(false)
+                        toast.error("Error while logging in")
                 }
         }
         return (

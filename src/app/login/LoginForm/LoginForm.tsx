@@ -22,23 +22,24 @@ const LoginForm = () => {
                 console.log(data)
                 try {
                         const loggedInUser = await loginService(data);
-                        console.log(loggedInUser)
+                        console.log(loggedInUser.data.refresh_token)
                         if (!(loggedInUser instanceof Error)) {
+                                localStorage.setItem("token", loggedInUser.data.refresh_token)
                                 toast.success(loggedInUser.message)
-                                if (loggedInUser.user.role === 'admin') {
+                                if (loggedInUser.data.user.roles[0].role_name == "ADMIN") {
                                         router.push("/staff")
-                                } else if (loggedInUser.user.role === "standard") {
+                                } else if (loggedInUser.data.user.roles[0].role_name == "STUDENT") {
                                         router.push("/student")
                                 }
                         }
-                } catch (err) {
-                        console.log(err)
-                        toast.error(err as string)
+                }
+                 catch (err) {
+                //         console.log(err)
                 }
         }
         return (
                 <form onSubmit={handleSubmit(onSubmit)} >
-                        <input type="text" className='text-black rounded-md border border-gray-400 border-opacity-9 bg-[#4343430D] w-full px-[1.94rem] py-[1rem] outline-none focus:outline-none my-2.5 placeholder:text-black' placeholder='Admin Email'  {...register("email")} />
+                        <input type="text" className='text-black rounded-md border border-gray-400 border-opacity-9 bg-[#4343430D] w-full px-[1.94rem] py-[1rem] outline-none focus:outline-none my-2.5 placeholder:text-black' placeholder='Email'  {...register("email")} />
                         <p className="text-red-500">{errors.email?.message}</p>
                         <input type="password" className='text-black rounded-md border border-gray-400 border-opacity-9 bg-[#4343430D] w-full px-[1.94rem] py-[1rem]  outline-none focus:outline-none my-2.5  placeholder:text-black' placeholder='Password' {...register("password")} />
                         <p className="text-red-500">{errors.password?.message}</p>

@@ -8,8 +8,8 @@ import axios from "axios"
 
 const AdminInnovation = () => {
         const [projects, setProjects] = useState<any>([])
+        const token = localStorage.getItem("token")
         useEffect(()=>{
-                const token = localStorage.getItem("token")
                 axios.get(`${baseUrl}/projects/all`,{
                         headers: {
                                 Authorization: `Bearer ${token}`

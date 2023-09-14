@@ -55,6 +55,7 @@ const ReportTable = () => {
         return (
                 <div className="overflow-x-auto">
                         <table className="w-full rounded-lg text-[rgba(67,67,67,0.71)]">
+                                <thead>
                                 <tr className="bg-[rgba(237,238,243)] text-[rgba(48,7,98,0.8)] py-10 rounded-md">
                                         <th className="p-2 border-white border-y-[5px]  rounded-l-xl">#</th>
                                         <th className="p-2 border-white border-y-[5px]">Student Name</th>
@@ -64,6 +65,8 @@ const ReportTable = () => {
                                         <th className="p-2 border-white border-y-[5px]">Status</th>
                                         <th className="p-2 border-white border-y-[5px]  rounded-r-xl">Upload</th>
                                 </tr>
+                                </thead>
+
                                 {students.map((student, index) => (
                                         <tr
                                                 key={index}

@@ -24,6 +24,8 @@ export default function StudentPortalLayout({
                 if(!localStorage.getItem("token")){
                         router.push("/login")
                 }
+
+                document.title = "RCA | Student portal"
         },[])
         return (
                 <div className='h-[110vh] overflow-x-hidden w-full'>

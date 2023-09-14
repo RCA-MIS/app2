@@ -1,57 +1,47 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import Project from '@/components/Projects/Project'
-import sampleImage from "../../../assets/newOne.png"
+import sampleImage from "../../../assets/assets/newOne.png"
+// import {projects} from "../../../data/projects"
+import { baseUrl } from '@/utils/url'
+import axios from "axios"
 
 const AdminInnovation = () => {
+        const [projects, setProjects] = useState<any>([])
+        useEffect(()=>{
+                const token = localStorage.getItem("token")
+                axios.get(`${baseUrl}/projects/all`,{
+                        headers: {
+                                Authorization: `Bearer ${token}`
+                        }
+                })
+                        .then(res=>{
+                                console.log(res.data)
+                                setProjects(res.data)
+                        })
+        },[])
 
-        const projects = [
-                {
-                        displayImage: sampleImage,
-                        titleHeader: "Bookinga Bus Scheduling by Zexos Group",
-                        time: "Sunday 24th September, 2020",
-                        content: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, If you are going  . . .",
-                        appreciations: 29900,
-                        FMessages: 900,
-                        publisher: "Ntakirutimana David"
-                },
-                {
-                        displayImage: sampleImage,
-                        titleHeader: "Yombi Labs. Great Law firms",
-                        time: "Sunday 24th September, 2020",
-                        content: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, If you are going  . . .",
-                        appreciations: 29900,
-                        FMessages: 900,
-                        publisher: "Ntakirutimana David"
-                }
-                ,
-                {
-                        displayImage: sampleImage,
-                        titleHeader: "Tuura Homes. Best houses for Rent & Sale",
-                        time: "Sunday 24th September, 2020",
-                        content: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, If you are going  . . .",
-                        appreciations: 29900,
-                        FMessages: 900,
-                        publisher: "Ntakirutimana David"
-                }
-        ]
         return (
                 <div className='w-full h-full'>
                         <header className='text-[#000000B2] font-semibold mx-1 my-3'>Published projects</header>
 
                         <div className='w-full h-[90%]  overflow-y-auto'>
-                                {projects.map(project=>{
+                                {projects.length !== 0 ?
+                                projects.map((project:any ,index:any)=>{
+                                        console.log(project)
                                         return(
                                                 <Project 
-                                                        displayImage={project.displayImage} 
-                                                        titleHeader={project.titleHeader} 
-                                                        content={project.content} 
-                                                        time={project.time}
-                                                        appreciations={project.appreciations}
+                                                        // displayImage={project.image}
+                                                        titleHeader={project.name} 
+                                                        content={project.description} 
+                                                        time={project.createdAt}
+                                                        appreciations={200}
                                                         FMessages={project.FMessages}
                                                         publisher={project.publisher}
+                                                        id= {index}
                                                 />
                                         )
-                                })}
+                                }): <h3 className='mx-auto mt-3 text-center'>No projects published yet.</h3>}
                         </div>
                 </div>
         )

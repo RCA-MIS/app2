@@ -2,7 +2,7 @@ import Announcement from '@/components/Announcement/Announcement'
 import React from 'react'
 import newOne from "../../assets/newOne.png"
 import newTwo from "../../assets/newTwo.png"
-import Graph from '@/components/Graph/Graph';
+import Graph from '@/components/Graph/StudentGraph';
 import Link from 'next/link';
 
 

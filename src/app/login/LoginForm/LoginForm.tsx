@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast'
 import { loginService } from '@/actions/auth.action'
 import { useRouter } from 'next/navigation'
 import { ClipLoader, FadeLoader } from 'react-spinners'
+
 const LoginForm = () => {
         const [loading, setLoading] = useState(false)
         const schema = yup.object().shape({
@@ -20,25 +21,28 @@ const LoginForm = () => {
         const router = useRouter()
         const onSubmit = async (data: Login) => {
                 console.log(data)
+                setLoading(true);
                 try {
                         const loggedInUser = await loginService(data);
-                        console.log(loggedInUser)
                         if (!(loggedInUser instanceof Error)) {
-                                toast.success(loggedInUser.message)
-                                if (loggedInUser.user.role === 'admin') {
+                                toast.success(loggedInUser.message.toString())
+                                if (loggedInUser.data.user.roles[0].role_name === 'admin') {
                                         router.push("/staff")
-                                } else if (loggedInUser.user.role === "standard") {
+                                } else if (loggedInUser.data.user.roles[0].role_name === "STUDENT") {
+                                        localStorage.setItem("token",JSON.stringify(loggedInUser.data));
                                         router.push("/student")
                                 }
                         }
-                } catch (err) {
-                        console.log(err)
-                        toast.error(err as string)
+                        setLoading(false)
+                }
+                 catch (err) {
+                        setLoading(false)
+                        toast.error("Error while logging in")
                 }
         }
         return (
                 <form onSubmit={handleSubmit(onSubmit)} >
-                        <input type="text" className='text-black rounded-md border border-gray-400 border-opacity-9 bg-[#4343430D] w-full px-[1.94rem] py-[1rem] outline-none focus:outline-none my-2.5 placeholder:text-black' placeholder='Admin Email'  {...register("email")} />
+                        <input type="text" className='text-black rounded-md border border-gray-400 border-opacity-9 bg-[#4343430D] w-full px-[1.94rem] py-[1rem] outline-none focus:outline-none my-2.5 placeholder:text-black' placeholder='Email'  {...register("email")} />
                         <p className="text-red-500">{errors.email?.message}</p>
                         <input type="password" className='text-black rounded-md border border-gray-400 border-opacity-9 bg-[#4343430D] w-full px-[1.94rem] py-[1rem]  outline-none focus:outline-none my-2.5  placeholder:text-black' placeholder='Password' {...register("password")} />
                         <p className="text-red-500">{errors.password?.message}</p>

@@ -9,7 +9,7 @@ export const loginService = (data: Login): Promise<any | Error> => {
                                 // console.log("finished message")
                                 // // localStorage.setItem("token", res.data.data.refreshToken)
                                 // resolve({ message })
-                                resolve({message})
+                                resolve(res.data)
                                 console.log(res)
                         })
                         .catch((error) => {

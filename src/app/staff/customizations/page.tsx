@@ -52,6 +52,7 @@ const AdminCustomization: React.FC = () => {
                 setLoading(true)
                 const token = localStorage.getItem("token")
                 const navigate = useRouter()
+                console.log(token)
                 axios.post(`${baseUrl}/web-content/update`, web, {
                         headers: {
                                 Authorization: `Bearer ${token}`

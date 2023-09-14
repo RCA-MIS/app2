@@ -10,7 +10,7 @@ import { toast } from 'react-hot-toast';
 import { createNews } from '@/actions/news.action';
 import { ClipLoader, FadeLoader } from 'react-spinners';
 
-const page = () => {
+const Page = () => {
         const [loading, setLoading] = useState(false)
         const schema = yup.object().shape({
                 headline: yup.string().required("Please provide the headline for the news"),
@@ -73,4 +73,4 @@ const page = () => {
         )
 }
 
-export default page
+export default Page

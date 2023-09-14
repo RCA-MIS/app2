@@ -39,6 +39,7 @@ const AdminInnovation = () => {
                                                         FMessages={project.FMessages}
                                                         publisher={project.publisher}
                                                         id= {index}
+                                                        key={index}
                                                 />
                                         )
                                 }): <h3 className='mx-auto mt-3 text-center'>No projects published yet.</h3>}

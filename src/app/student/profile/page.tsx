@@ -1,7 +1,5 @@
 import FileDropZone from '@/components/FileDrop/FileDrop'
 import React from 'react'
-// import 
-// import ProfileInput from './ProfileInput';
 
 const Profile = () => {
         return (

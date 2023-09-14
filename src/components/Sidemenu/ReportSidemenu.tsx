@@ -7,12 +7,14 @@ import { useState } from "react"
 
 interface Drop{
     dropHeader: string,
-    dropItems: object[]
+    dropItems: object[],
+    id: number
 }
 const ReportSidemenu = ()=>{
     const Dropdowns = [
         {
             dropHeader: "Academic Year 21’ - 22’ (Yr 1)",
+            id:1,
             dropItems: [
                 {
                     to: "/report-cards/1?term=1",
@@ -31,6 +33,7 @@ const ReportSidemenu = ()=>{
 
         {
             dropHeader: "Academic Year 22’ - 23’ (Yr 2)",
+            id:2,
             dropItems: [
                 {
                     to: "/report-cards/2?term=1",
@@ -49,6 +52,7 @@ const ReportSidemenu = ()=>{
 
         {
             dropHeader: "Academic Year 23’ - 24’ (Yr 3)",
+            id:3,
             dropItems: [
                 {
                     to: "/report-cards/3?term=1",
@@ -78,7 +82,7 @@ const ReportSidemenu = ()=>{
                     <div className="w-[95%] flex flex-col items-center justify-center">
                         {Dropdowns.map((dropdown: Drop)=>{
                             return(
-                                <DropDown dropHeader={dropdown.dropHeader} dDownItems={dropdown.dropItems}/>
+                                <DropDown dropHeader={dropdown.dropHeader} dDownItems={dropdown.dropItems} key={dropdown.id}/>
                             )
                         })}
                     </div>

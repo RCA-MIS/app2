@@ -1,9 +1,48 @@
 'use client'
 import FileDropComponent from "@/components/FileDrop/FileDrop"
+import { useState } from "react";
+import axios from "axios"
+import { baseUrl } from "@/utils/url";
+import { axiosInstance } from "@/utils/url";
+import {toast} from "react-hot-toast"
 
 const AddInnovations = ()=>{
+    const [formData, setFormData] = useState({
+        name: "",
+        title: "",
+        description: "",
+        status: "APPROVED",
+        userEmail: "nyiringabodavid62@gmail.com",
+        image: []
+    })
+    const onChange = (e: any) =>{
+        const {name, value} = e.target
+        setFormData((prevState)=>({
+            ...prevState,
+            [name]: value
+        }))
+    }
+    const projectData = new FormData()
+    const handleChange = (value:any)=>{
+        projectData.append("file", value)
+    }
+    const handleSubmit = (e: any)=>{
+        console.log(formData)
+        e.preventDefault()
+        axiosInstance.post("/projects/create", formData)
+            .then(res=>{
+                console.log(res)
+                toast.success(res.data.message)
+                
+            })
+            .catch(err=>{
+                console.log(err)
+
+            })
+    }
     const handleFilesSelected = (files: File[]) => {
-        console.log('Files selected:', files);
+        // console.log(files[0].path)
+        // formData.image = files[0].path
 };
     return (
         <div className="w-full">
@@ -11,7 +50,7 @@ const AddInnovations = ()=>{
 
             <p className="text-[rgba(67,67,67,0.43)] my-3 text-[12px] mx-1">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, cons, adipisci velit, </p>
 
-            <form className="w-full flex flex-col px-1">
+            <form className="w-full flex flex-col px-1" onSubmit={handleSubmit}>
                 <div className="max-[500px]:flex-col w-[99%] flex justify-between">
                     <div className="max-[500px]:w-full max-[500px]:mb-2 w-[50%]">
                         <FileDropComponent fileType='landing' onFilesSelected={handleFilesSelected}>
@@ -23,9 +62,9 @@ const AddInnovations = ()=>{
                     </div>
 
                     <div className="max-[500px]:w-full w-[47%]">
-                        <input type="text" placeholder='Project Name' className='w-full mb-3 h-14 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
-                        <input type="text" placeholder='Project Website Link' className='w-full mb-3 h-14 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
-                        <input type="text" placeholder='Project Github Link' className='w-full mb-3 h-14 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                        <input type="text" name="name" placeholder='Project Name' onChange={onChange}  className='w-full mb-3 h-14 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                        <input type="text" name="webLink" placeholder='Project Website Link' onChange={onChange} className='w-full mb-3 h-14 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
+                        <input type="text" name="gitLink" placeholder='Project Github Link' onChange={onChange} className='w-full mb-3 h-14 px-3 py-2 text-black placeholder:text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]' />
                         <div>
                             <p>Project Problem Fields: </p>
                             <div className="w-full flex px-3 items-center my-3 h-16 text-black bg-[rgba(67,67,67,0.03)]  rounded-md border-[2px] border-[rgba(67,67,67,0.09)]">
@@ -37,7 +76,7 @@ const AddInnovations = ()=>{
                     </div>
 
                 </div>
-                <textarea name="projectInfo" cols={20} rows={20} className="w-full max-[500px]:h-[20vh] h-[35vh] p-2 resize-none rounded-lg border-2 border-[#43434317] bg-[rgba(67,67,67,0.03)]">
+                <textarea name="description" cols={20} rows={20}  onChange={onChange} className="w-full max-[500px]:h-[20vh] h-[35vh] p-2 resize-none rounded-lg border-2 border-[#43434317] bg-[rgba(67,67,67,0.03)]">
 
                 </textarea>
 

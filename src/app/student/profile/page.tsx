@@ -1,10 +1,18 @@
+"use client"
 import FileDropZone from '@/components/FileDrop/FileDrop'
+import {useRouter} from 'next/navigation'
+// import { useRouter } from 'next/router'
 import React from 'react'
 
 const Profile = () => {
+        const router = useRouter()
+        const handleLogout = ()=>{
+                localStorage.removeItem("token")
+                router.push("/")
+        }
         return (
-                <div className='w-full h-full overflow-x-hidden p-2 text-sm'>
-                   {/* <header className="text-[#000000B2] font-semibold mx-1 my-2">Student profile</header>
+                <div className='w-full h-full overflow-x-hidden p-2 text-sm flex flex-col'>
+                   <header className="text-[#000000B2] font-semibold mx-1 my-2">Student profile</header>
                    <p className='text-[rgba(67,67,67,0.43)] mx-1'>Neque porro quisquam est, qui dolorem ipsum quia dolor</p>
 
                    <div className='w-full flex flex-col md:flex-row justify-between'>
@@ -68,7 +76,8 @@ const Profile = () => {
                                 
                         </div>
 
-                   </div> */}
+                   </div>
+                   <button onClick={handleLogout} className='bg-[#ee5454] self-end mt-1 md:mt-0 text-white rounded-md  border-[2px] border-[rgba(67,67,67,0.09)] px-7 py-3' >Logout</button>
                 </div>
         )
 }

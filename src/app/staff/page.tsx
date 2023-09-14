@@ -2,7 +2,7 @@ import Achievement from '@/components/Achievement/Achievement'
 import React from 'react'
 import newOne from "../../assets/newOne.jpg"
 import newTwo from "../../assets/newTwo.jpg"
-import Graph from '@/components/Graph/Graph';
+import Graph from '@/components/graph/Graph';
 import Link from 'next/link';
 import ProjectsTable from '@/components/HomePage/ProjectsTable';
 

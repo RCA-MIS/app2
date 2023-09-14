@@ -4,7 +4,7 @@ import React from 'react'
 const Profile = () => {
         return (
                 <div className='w-full h-full overflow-x-hidden p-2 text-sm'>
-                   <header className="text-[#000000B2] font-semibold mx-1 my-2">Student profile</header>
+                   {/* <header className="text-[#000000B2] font-semibold mx-1 my-2">Student profile</header>
                    <p className='text-[rgba(67,67,67,0.43)] mx-1'>Neque porro quisquam est, qui dolorem ipsum quia dolor</p>
 
                    <div className='w-full flex flex-col md:flex-row justify-between'>
@@ -68,7 +68,7 @@ const Profile = () => {
                                 
                         </div>
 
-                   </div>
+                   </div> */}
                 </div>
         )
 }
